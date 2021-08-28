@@ -9,7 +9,7 @@ class DatabaseConnection:
         self.host = host
 
     # this will called when we enter into the context manager
-    def __enter__(self):
+    def __enter__(self)->sqlite3.Connection:
         self.connection = sqlite3.connect(self.host)
         return self.connection
 
